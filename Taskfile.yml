@@ -1,0 +1,13 @@
+version: "3"
+
+tasks:
+  unit-test:
+    deps: [unit-test-clean-cache]
+    cmds:
+      - go test -v ./...
+
+  # Internal Tasks
+  unit-test-clean-cache:
+    internal: true
+    cmds:
+      - go clean -testcache
