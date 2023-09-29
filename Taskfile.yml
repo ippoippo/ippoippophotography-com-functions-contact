@@ -4,7 +4,8 @@ tasks:
   unit-test:
     deps: [unit-test-clean-cache]
     cmds:
-      - go test -v ./...
+      - go test -v -coverprofile=coverage.out ./...
+      - go tool cover -html=coverage.out
 
   # Internal Tasks
   unit-test-clean-cache:

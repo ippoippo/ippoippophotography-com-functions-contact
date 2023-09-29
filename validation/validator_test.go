@@ -9,6 +9,13 @@ import (
 	"github.com/ippoippo/ippoippophotography-com-functions-contact/validation"
 )
 
+func TestNewContactFormValidator(t *testing.T) {
+	actual := validation.NewContactFormValidator()
+	if actual == nil {
+		t.Error("NewContactFormValidator() should result in non-nil")
+	}
+}
+
 func TestContactFormValidAndFieldErrorsCount(t *testing.T) {
 	type testSpec struct {
 		request                  api.EmailFormRequest

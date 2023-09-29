@@ -31,7 +31,7 @@ This was also causing problems with `*_test.go` files too.
 
 Since I want to avoid a single `.go` file, I am extracting all functionality into a seperate repository per servless function.
 
-## Solution
+### Solution
 
 [My Website (monorepo) repository: ippoippophotography-com-src](https://github.com/ippoippo/ippoippophotography-com-src) source code will be updated to include `functions-src`.
 
@@ -69,3 +69,13 @@ functions-src
 │   └── validator.go // Validates the request from DigitalOcean
 └── go.mod
 ```
+
+## Version naming convention
+
+This repo use [SemVer](https://semver.org).
+
+- MAJOR version when you make incompatible API changes
+- MINOR version when you add functionality in a backward compatible manner
+  - My addition: This will also include version upgrades of Go (eg. 1.20 to 1.21)
+- PATCH version when you make backward compatible bug fixes
+  - My addition: This will include library updates.
