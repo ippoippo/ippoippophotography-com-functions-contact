@@ -2,13 +2,18 @@ version: "3"
 
 tasks:
   unit-test:
-    deps: [unit-test-clean-cache]
+    deps: [_direnv-allow, _unit-test-clean-cache]
     cmds:
       - go test -v -coverprofile=coverage.out ./...
       - go tool cover -html=coverage.out
 
   # Internal Tasks
-  unit-test-clean-cache:
+  _unit-test-clean-cache:
     internal: true
     cmds:
       - go clean -testcache
+
+  _direnv-allow:
+    internal: true
+    cmds:
+      - direnv allow
